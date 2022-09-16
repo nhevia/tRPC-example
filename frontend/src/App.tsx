@@ -1,22 +1,15 @@
-import { useEffect, useState } from "react";
+import { trpc } from "./lib/trpc";
 
 import "./App.css";
 
 function App() {
-  const [serverData, setServerData] = useState();
+  // exactly same functionality than useQuery: we can useMutation, etc
+  // since it works as a wrapper
+  const { data } = trpc.useQuery(["getLastMessage"]);
 
-  const getData = async () => {
-    const res = await fetch("http://localhost:5000");
-    const data = await res.json();
-
-    return data;
-  };
-
-  useEffect(() => {
-    getData().then((res) => setServerData(res));
-  }, []);
-
-  return <div className="App">{JSON.stringify(serverData)}</div>;
+  // data now is type-aware of the types defined in the backend
+  // if they change (or are incorrect) we'll be notified here
+  return <div className="App">{data?.id}</div>;
 }
 
 export default App;
