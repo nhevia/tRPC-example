@@ -1,6 +1,6 @@
 ### Summary
 
-This is a project to showcase end-to-end type safety using [tRPC](https://trpc.io).
+This is a project to showcase runtime end-to-end type safety using [tRPC](https://trpc.io).
 
 It's composed of a backend server (`server-api`) using Node+Express and a React application (`frontend`) scaffolded with ViteJS.
 
@@ -8,13 +8,14 @@ Types are available in the frontend because the tRPC client can hit `http://loca
 
 ### Usage
 
-1. Install dependencies:
+Note: this project uses worspaces, execute commands from root folder.
 
-- `$ cd frontend && npm install`
-- `$ cd server-api && npm install`
+1. Install dependencies
+   `$ npm install`
+   <br>
 
-2. Start both dev servers (from root folder) <sub><sup>(both server outputs will be mixed in the same terminal, alternatively you can start each dev server from their own folder in separate terminals)</sup></sub>
+2. Start both dev servers <sub><sup>(note: outputs will be mixed in the same terminal. Alternatively you can start each dev server from their own folder in separate terminals)</sup></sub>
    `$ npm start`
    <br>
 
-3. Go to `http://localhost:3000` and you should see `data` information. These objects have type safety coming from the backend. This is achieve using `tRPC` as a wrapper for [tanstack/query](https://github.com/tanstack/query) (asynchronous store).
+3. Go to `http://localhost:3000` and you should see the returned `data`. These objects have type safety all the way from the backend, where they are declared. This is achieve using `tRPC` as a wrapper for [tanstack/query](https://github.com/tanstack/query) (asynchronous store).
