@@ -32,7 +32,12 @@ const appRouter = trpc
   })
   .query("getLastMessage", {
     resolve() {
-      return messages[-1];
+      return messages.at(-1);
+    },
+  })
+  .query("getMessages", {
+    resolve() {
+      return messages;
     },
   });
 
