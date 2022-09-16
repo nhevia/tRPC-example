@@ -13,9 +13,8 @@ Types are available in the frontend because the tRPC client can hit `http://loca
 - `$ cd frontend && npm install`
 - `$ cd server-api && npm install`
 
-2. Start the development servers:
+2. Start both dev servers (from root folder) <sub><sup>(both server outputs will be mixed in the same terminal, alternatively you can start each dev server from their own folder in separate terminals)</sup></sub>
+   `$ npm start`
+   <br>
 
-- `$ cd frontend && npm run dev`
-- `$ cd server-api && npm run dev`
-
-3. Go to `http://localhost:3000` and verify you got the `data` object. This object has type safety coming from the backend. This is achieve using `tRPC` as a wrapper for [tanstack/query](https://github.com/tanstack/query) (asynchronous store).
+3. Go to `http://localhost:3000` and you should see `data` information. These objects have type safety coming from the backend. This is achieve using `tRPC` as a wrapper for [tanstack/query](https://github.com/tanstack/query) (asynchronous store).
