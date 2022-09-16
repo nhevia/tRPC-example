@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { trpc } from "./lib/trpc";
 import App from "./App";
-import "./index.css";
 
 const client = new QueryClient();
 // This should work instead of using useState
